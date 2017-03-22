@@ -13,41 +13,35 @@ import com.lewish.start.baseadapterlib.abslistview.CommonAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /**
  * author: sundong
  * created at 2017/3/22 16:09
  */
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     private List<String> mDatas = new ArrayList<>(Arrays.asList("MultiItem ListView",
             "RecyclerView",
-            "MultiItem RecyclerView","RecyclerViewWithHeader"));
+            "MultiItem RecyclerView", "RecyclerViewWithHeader"));
     private ListView mListView;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mListView = ((ListView) findViewById(R.id.id_listview_list));
-        mListView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas)
-        {
+        mListView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas) {
             @Override
-            public void convert(ViewHolder holder, String o)
-            {
+            public void convert(ViewHolder holder, String o) {
                 holder.setText(R.id.id_item_list_title, o);
             }
         });
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = null;
-                switch (position)
-                {
+                switch (position) {
                     case 0:
                     default:
                         intent = new Intent(MainActivity.this, MultiItemListViewActivity.class);

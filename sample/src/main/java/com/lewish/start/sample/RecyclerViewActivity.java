@@ -13,19 +13,18 @@ import com.lewish.start.baseadapterlib.recyclerview.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * author: sundong
  * created at 2017/3/22 16:09
  */
-public class RecyclerViewActivity extends AppCompatActivity
-{
+public class RecyclerViewActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
 
@@ -36,44 +35,37 @@ public class RecyclerViewActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
-        mRecyclerView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas)
-        {
+        mRecyclerView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas) {
             @Override
-            public void convert(ViewHolder holder, String s)
-            {
+            public void convert(ViewHolder holder, String s) {
                 holder.setText(R.id.id_item_list_title, s);
             }
         });
 
     }
 
-    private void initDatas()
-    {
-        for (int i = 'A'; i < 'z'; i++)
-        {
+    private void initDatas() {
+        for (int i = 'A'; i < 'z'; i++) {
             mDatas.add((char) i + "");
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_recycler_view, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
+        if (id == R.id.action_settings) {
             return true;
         }
 

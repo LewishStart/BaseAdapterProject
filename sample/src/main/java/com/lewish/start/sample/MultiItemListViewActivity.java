@@ -11,14 +11,12 @@ import com.lewish.start.sample.bean.ChatMessage;
  * author: sundong
  * created at 2017/3/22 16:09
  */
-public class MultiItemListViewActivity extends AppCompatActivity
-{
+public class MultiItemListViewActivity extends AppCompatActivity {
 
     private ListView mListView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

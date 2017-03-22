@@ -14,27 +14,20 @@ import java.util.List;
  * author: sundong
  * created at 2017/3/22 16:08
  */
-public class ChatAdapterForRv extends MultiItemCommonAdapter<ChatMessage>
-{
-    public ChatAdapterForRv(Context context, List<ChatMessage> datas)
-    {
-        super(context, datas, new MultiItemTypeSupport<ChatMessage>()
-        {
+public class ChatAdapterForRv extends MultiItemCommonAdapter<ChatMessage> {
+    public ChatAdapterForRv(Context context, List<ChatMessage> datas) {
+        super(context, datas, new MultiItemTypeSupport<ChatMessage>() {
             @Override
-            public int getLayoutId(int itemType)
-            {
-                if (itemType == ChatMessage.RECIEVE_MSG)
-                {
+            public int getLayoutId(int itemType) {
+                if (itemType == ChatMessage.RECIEVE_MSG) {
                     return R.layout.main_chat_from_msg;
                 } else
                     return R.layout.main_chat_send_msg;
             }
 
             @Override
-            public int getItemViewType(int postion, ChatMessage msg)
-            {
-                if (msg.isComMeg())
-                {
+            public int getItemViewType(int postion, ChatMessage msg) {
+                if (msg.isComMeg()) {
                     return ChatMessage.RECIEVE_MSG;
                 }
                 return ChatMessage.SEND_MSG;
@@ -43,11 +36,9 @@ public class ChatAdapterForRv extends MultiItemCommonAdapter<ChatMessage>
     }
 
     @Override
-    public void convert(ViewHolder holder, ChatMessage chatMessage)
-    {
+    public void convert(ViewHolder holder, ChatMessage chatMessage) {
 
-        switch (holder.getLayoutId())
-        {
+        switch (holder.getLayoutId()) {
             case R.layout.main_chat_from_msg:
                 holder.setText(R.id.chat_from_content, chatMessage.getContent());
                 holder.setText(R.id.chat_from_name, chatMessage.getName());

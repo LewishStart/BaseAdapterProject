@@ -17,30 +17,24 @@ import java.util.List;
 public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
 
 {
-    public ChatAdapter(Context context, List<ChatMessage> datas)
-    {
-        super(context, datas, new MultiItemTypeSupport<ChatMessage>()
-        {
+    public ChatAdapter(Context context, List<ChatMessage> datas) {
+        super(context, datas, new MultiItemTypeSupport<ChatMessage>() {
             @Override
-            public int getLayoutId(int position, ChatMessage msg)
-            {
-                if (msg.isComMeg())
-                {
+            public int getLayoutId(int position, ChatMessage msg) {
+                if (msg.isComMeg()) {
                     return R.layout.main_chat_from_msg;
                 }
                 return R.layout.main_chat_send_msg;
             }
 
             @Override
-            public int getViewTypeCount()
-            {
+            public int getViewTypeCount() {
                 return 2;
             }
+
             @Override
-            public int getItemViewType(int postion, ChatMessage msg)
-            {
-                if (msg.isComMeg())
-                {
+            public int getItemViewType(int postion, ChatMessage msg) {
+                if (msg.isComMeg()) {
                     return ChatMessage.RECIEVE_MSG;
                 }
                 return ChatMessage.SEND_MSG;
@@ -49,11 +43,9 @@ public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
     }
 
     @Override
-    public void convert(ViewHolder holder, ChatMessage chatMessage)
-    {
+    public void convert(ViewHolder holder, ChatMessage chatMessage) {
 
-        switch (holder.getLayoutId())
-        {
+        switch (holder.getLayoutId()) {
             case R.layout.main_chat_from_msg:
                 holder.setText(R.id.chat_from_content, chatMessage.getContent());
                 holder.setText(R.id.chat_from_name, chatMessage.getName());

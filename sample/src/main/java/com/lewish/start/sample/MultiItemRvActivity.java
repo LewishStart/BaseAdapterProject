@@ -16,13 +16,11 @@ import com.lewish.start.sample.bean.ChatMessage;
  * author: sundong
  * created at 2017/3/22 16:09
  */
-public class MultiItemRvActivity extends AppCompatActivity
-{
+public class MultiItemRvActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
 
@@ -31,17 +29,14 @@ public class MultiItemRvActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ChatAdapterForRv adapter = new ChatAdapterForRv(this, ChatMessage.MOCK_DATAS);
-        adapter.setOnItemClickListener(new OnItemClickListener<ChatMessage>()
-        {
+        adapter.setOnItemClickListener(new OnItemClickListener<ChatMessage>() {
             @Override
-            public void onItemClick(ViewGroup parent, View view, ChatMessage o, int position)
-            {
+            public void onItemClick(ViewGroup parent, View view, ChatMessage o, int position) {
                 Toast.makeText(MultiItemRvActivity.this, "Click:" + position + " => " + o.getContent(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public boolean onItemLongClick(ViewGroup parent, View view, ChatMessage o, int position)
-            {
+            public boolean onItemLongClick(ViewGroup parent, View view, ChatMessage o, int position) {
                 Toast.makeText(MultiItemRvActivity.this, "LongClick:" + position + " => " + o.getContent(), Toast.LENGTH_SHORT).show();
                 return false;
             }
