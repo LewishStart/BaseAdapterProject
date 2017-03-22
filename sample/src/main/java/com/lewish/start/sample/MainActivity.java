@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private List<String> mDatas = new ArrayList<>(Arrays.asList("MultiItem ListView",
             "RecyclerView",
-            "MultiItem RecyclerView", "RecyclerViewWithHeader"));
+            "MultiItem RecyclerView"));
     private ListView mListView;
 
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mListView = ((ListView) findViewById(R.id.id_listview_list));
         mListView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas) {
             @Override
-            public void convert(ViewHolder holder, String o) {
+            public void convert(ViewHolder holder, String o,int position) {
                 holder.setText(R.id.id_item_list_title, o);
             }
         });
@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         intent = new Intent(MainActivity.this, MultiItemRvActivity.class);
-                        break;
-                    case 3:
-//                        intent = new Intent(MainActivity.this, RvWidthHeaderActivity.class);
                         break;
 
                 }

@@ -42,7 +42,7 @@ public class Test extends MultiItemCommonAdapter<ChatMessage> {
     }
 
     @Override
-    public void convert(ViewHolder holder, ChatMessage chatMessage) {
+    public void convert(ViewHolder holder, ChatMessage chatMessage,int position) {
         switch (holder.getLayoutId()) {
             case R.layout.main_chat_from_msg:
                 holder.setText(R.id.chat_from_content, chatMessage.getContent());

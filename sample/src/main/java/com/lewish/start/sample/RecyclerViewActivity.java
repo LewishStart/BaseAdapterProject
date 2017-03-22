@@ -37,7 +37,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         mRecyclerView.setAdapter(new CommonAdapter<String>(this, R.layout.item_list, mDatas) {
             @Override
-            public void convert(ViewHolder holder, String s) {
+            public void convert(ViewHolder holder, String s,int position) {
                 holder.setText(R.id.id_item_list_title, s);
             }
         });

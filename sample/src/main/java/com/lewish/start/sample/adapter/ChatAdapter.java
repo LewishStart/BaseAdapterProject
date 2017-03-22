@@ -43,7 +43,7 @@ public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
     }
 
     @Override
-    public void convert(ViewHolder holder, ChatMessage chatMessage) {
+    public void convert(ViewHolder holder, ChatMessage chatMessage,int position) {
 
         switch (holder.getLayoutId()) {
             case R.layout.main_chat_from_msg:
