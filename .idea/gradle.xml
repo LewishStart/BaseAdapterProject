@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/baseadapterlib" />
+            <option value="$PROJECT_DIR$/expandablelistviewdemo" />
             <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>

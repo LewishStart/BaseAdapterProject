@@ -1,1 +1,1 @@
-include ':baseadapterlib', ':sample'
+include ':baseadapterlib', ':sample','expandablelistviewdemo'
